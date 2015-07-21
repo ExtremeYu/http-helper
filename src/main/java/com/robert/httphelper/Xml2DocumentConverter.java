@@ -33,6 +33,6 @@ public class Xml2DocumentConverter extends AbstractConverter implements
 		} catch (SAXException ex) {
 			throw new ClientProtocolException("Malformed XML document", ex);
 		}
-
 	}
+	
 }
