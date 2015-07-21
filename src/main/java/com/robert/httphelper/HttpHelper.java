@@ -1,6 +1,6 @@
 package com.robert.httphelper;
 
-public abstract class Helper {
+public abstract class HttpHelper {
 
 	public static <T> Json2BeanConverter<T> json2BeanConverter(Class<T> clazz) {
 		return new Json2BeanConverter<T>(clazz);
