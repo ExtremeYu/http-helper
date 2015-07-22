@@ -11,6 +11,17 @@ import com.robert.httphelper.converter.Json2ObjectConverter;
 import com.robert.httphelper.converter.LongConverter;
 import com.robert.httphelper.converter.Xml2DocumentConverter;
 
+/**
+ * <p>
+ * The static helper class used to return the different converters for differnt
+ * data types.This is a combination of flyweight and factory design pattern.
+ * </p>
+ *
+ * @author Robert Lee
+ * @version 1.0
+ * @since Jul 15, 2015
+ */
+
 public abstract class HttpHelper {
 
 	public static <T> Json2BeanConverter<T> Json2BeanConverter(Class<T> clazz) {

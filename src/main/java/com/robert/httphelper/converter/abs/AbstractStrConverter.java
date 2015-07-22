@@ -11,6 +11,16 @@ import org.apache.http.client.HttpResponseException;
 import org.apache.http.entity.ContentType;
 import org.apache.http.util.EntityUtils;
 
+/**
+ * <p>
+ * Convert the HTTP body to string related data type.
+ * </p>
+ *
+ * @author Robert Lee
+ * @version 1.0
+ * @since Jul 15, 2015
+ */
+
 public abstract class AbstractStrConverter<T> extends AbstractConverter<T> {
 
 	protected void checkFormat(HttpResponse response)

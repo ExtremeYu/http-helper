@@ -11,6 +11,16 @@ import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpResponseException;
 import org.apache.http.entity.ContentType;
 
+/**
+ * <p>
+ * Convert the HTTP body to Steam related data type.
+ * </p>
+ *
+ * @author Robert Lee
+ * @version 1.0
+ * @since Jul 15, 2015
+ */
+
 public abstract class AbstractStreamConverter<T> extends AbstractConverter<T> {
 
 	protected void checkFormat(HttpResponse response)
