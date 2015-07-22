@@ -1,17 +1,11 @@
 package com.robert.httphelper.converter;
 
-import java.io.IOException;
+import com.robert.httphelper.converter.abs.AbstractStrConverter;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.ResponseHandler;
+public class FloatConverter extends AbstractStrConverter<Float> {
 
-public class FloatConverter extends AbstractConverter implements
-		ResponseHandler<Float> {
-
-	public Float handleResponse(HttpResponse response)
-			throws ClientProtocolException, IOException {
-		String str = resp2String(response);
+	@Override
+	protected Float doConstructObject(String str) {
 		return new Float(str);
 	}
 

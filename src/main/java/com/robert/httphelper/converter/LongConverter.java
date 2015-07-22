@@ -1,17 +1,11 @@
 package com.robert.httphelper.converter;
 
-import java.io.IOException;
+import com.robert.httphelper.converter.abs.AbstractStrConverter;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.ResponseHandler;
+public class LongConverter extends AbstractStrConverter<Long> {
 
-public class LongConverter extends AbstractConverter implements
-		ResponseHandler<Long> {
-
-	public Long handleResponse(HttpResponse response)
-			throws ClientProtocolException, IOException {
-		String str = resp2String(response);
+	@Override
+	protected Long doConstructObject(String str) {
 		return new Long(str);
 	}
 

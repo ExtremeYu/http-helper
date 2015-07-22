@@ -8,31 +8,17 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.ResponseHandler;
-import org.apache.http.entity.ContentType;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
-public class Xml2DocumentConverter extends AbstractConverter implements
-		ResponseHandler<Document> {
+import com.robert.httphelper.converter.abs.AbstractStreamConverter;
 
-	public Document handleResponse(HttpResponse response)
-			throws ClientProtocolException, IOException {
+public class Xml2DocumentConverter extends AbstractStreamConverter<Document> {
 
-		HttpEntity entity = response.getEntity();
-		ContentType contentType = ContentType.getOrDefault(entity);
-		if (!contentType.equals(ContentType.APPLICATION_XML)) {
-			throw new ClientProtocolException("Unexpected content type:"
-					+ contentType);
-		}
-
-		Charset charset = getCharset(response);
-
-		InputStream is = resp2InputStream(response);
-
+	@Override
+	protected Document doConstructObject(InputStream is, Charset charset)
+			throws IOException {
 		DocumentBuilderFactory dbfac = DocumentBuilderFactory.newInstance();
 		try {
 			DocumentBuilder docBuilder = dbfac.newDocumentBuilder();
@@ -43,5 +29,5 @@ public class Xml2DocumentConverter extends AbstractConverter implements
 			throw new ClientProtocolException("Malformed XML document", ex);
 		}
 	}
-	
+
 }

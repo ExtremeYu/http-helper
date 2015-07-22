@@ -1,18 +1,13 @@
 package com.robert.httphelper.converter;
 
-import java.io.IOException;
 import java.math.BigDecimal;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.ResponseHandler;
+import com.robert.httphelper.converter.abs.AbstractStrConverter;
 
-public class BigDecimalConverter extends AbstractConverter implements
-		ResponseHandler<BigDecimal> {
+public class BigDecimalConverter extends AbstractStrConverter<BigDecimal> {
 
-	public BigDecimal handleResponse(HttpResponse response)
-			throws ClientProtocolException, IOException {
-		String str = resp2String(response);
+	@Override
+	protected BigDecimal doConstructObject(String str) {
 		return new BigDecimal(str);
 	}
 

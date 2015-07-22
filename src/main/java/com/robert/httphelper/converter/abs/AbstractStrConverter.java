@@ -1,7 +1,6 @@
-package com.robert.httphelper.converter;
+package com.robert.httphelper.converter.abs;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.nio.charset.Charset;
 
 import org.apache.http.HttpEntity;
@@ -12,7 +11,23 @@ import org.apache.http.client.HttpResponseException;
 import org.apache.http.entity.ContentType;
 import org.apache.http.util.EntityUtils;
 
-public abstract class AbstractConverter {
+public abstract class AbstractStrConverter<T> extends AbstractConverter<T> {
+
+	protected void checkFormat(HttpResponse response)
+			throws ClientProtocolException {
+		HttpEntity entity = response.getEntity();
+		ContentType contentType = ContentType.getOrDefault(entity);
+		if (!contentType.equals(ContentType.DEFAULT_TEXT)) {
+			throw new ClientProtocolException("Unexpected content type:"
+					+ contentType);
+		}
+	}
+
+	protected T doConvert(HttpResponse response) throws HttpResponseException,
+			ClientProtocolException, IOException {
+		String result = resp2String(response);
+		return doConstructObject(result);
+	}
 
 	protected String resp2String(HttpResponse response)
 			throws HttpResponseException, ClientProtocolException, IOException {
@@ -33,33 +48,6 @@ public abstract class AbstractConverter {
 		return str;
 	}
 
-	protected InputStream resp2InputStream(HttpResponse response)
-			throws UnsupportedOperationException, IOException {
-		StatusLine statusLine = response.getStatusLine();
-		HttpEntity entity = response.getEntity();
+	protected abstract T doConstructObject(String str);
 
-		if (statusLine.getStatusCode() >= 300) {
-			throw new HttpResponseException(statusLine.getStatusCode(),
-					statusLine.getReasonPhrase());
-		}
-		if (entity == null) {
-			throw new ClientProtocolException("Response contains no content");
-		}
-
-		InputStream is = entity.getContent();
-		return is;
-	}
-
-	protected Charset getCharset(HttpResponse response)
-			throws ClientProtocolException {
-		HttpEntity entity = response.getEntity();
-
-		ContentType contentType = ContentType.getOrDefault(entity);
-		Charset charset = contentType.getCharset();
-		if (charset == null) {
-			charset = Charset.defaultCharset();
-		}
-		
-		return charset;
-	}
 }
