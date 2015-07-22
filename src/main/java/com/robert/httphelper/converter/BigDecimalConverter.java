@@ -1,18 +1,19 @@
-package com.robert.httphelper;
+package com.robert.httphelper.converter;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.ResponseHandler;
 
-public class FloatConverter extends AbstractConverter implements
-		ResponseHandler<Float> {
+public class BigDecimalConverter extends AbstractConverter implements
+		ResponseHandler<BigDecimal> {
 
-	public Float handleResponse(HttpResponse response)
+	public BigDecimal handleResponse(HttpResponse response)
 			throws ClientProtocolException, IOException {
 		String str = resp2String(response);
-		return new Float(str);
+		return new BigDecimal(str);
 	}
 
 }

@@ -1,4 +1,4 @@
-package com.robert.httphelper;
+package com.robert.httphelper.converter;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -53,16 +53,13 @@ public abstract class AbstractConverter {
 	protected Charset getCharset(HttpResponse response)
 			throws ClientProtocolException {
 		HttpEntity entity = response.getEntity();
-		ContentType contentType = ContentType.getOrDefault(entity);
-		if (!contentType.equals(ContentType.APPLICATION_XML)) {
-			throw new ClientProtocolException("Unexpected content type:"
-					+ contentType);
-		}
 
+		ContentType contentType = ContentType.getOrDefault(entity);
 		Charset charset = contentType.getCharset();
 		if (charset == null) {
 			charset = Charset.defaultCharset();
 		}
+		
 		return charset;
 	}
 }
