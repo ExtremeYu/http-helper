@@ -18,11 +18,11 @@ Http-Helper是对Apache Httpclient和Fluent API的有效补充，它使得使用
 
 1.下载源代码后在项目根目录执行如下命令安装打包文件到你的Maven私服。
 
->./deploy-maven.sh
+> ***./deploy-maven.sh***
 
 2.在你的项目pom.xml文件中添加对模块的依赖。
 
->```xml
+```xml
 		<dependency>
 			<groupId>com.robert.httphelper</groupId>
 			<artifactId>http-helper</artifactId>
