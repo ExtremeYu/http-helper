@@ -72,16 +72,6 @@ public class Sample {
 				.handleResponse(HttpHelper.BitDecimalConverter());
 		System.out.println(bitDecimalResult);
 
-		// Read XML Document object
-		Document documentResult = Request.Get("http://ip:port").execute()
-				.handleResponse(HttpHelper.Xml2DocumentConverter());
-		System.out.println(documentResult.toString());
-
-		// Read JSONObject object
-		JSONObject jsonObjectResult = Request.Get("http://ip:port").execute()
-				.handleResponse(HttpHelper.Json2ObjectConverter());
-		System.out.println(jsonObjectResult.toJSONString());
-
 		// Read Bean
 		Student beanResult = Request.Get("http://ip:port").execute()
 				.handleResponse(HttpHelper.Json2BeanConverter(Student.class));
@@ -91,5 +81,15 @@ public class Sample {
 		List<Student> beanListResult = Request.Get("http://ip:port").execute()
 				.handleResponse(HttpHelper.Json2BeansConverter(Student.class));
 		System.out.println(beanListResult);
+
+		// Read XML Document object
+		Document documentResult = Request.Get("http://ip:port").execute()
+				.handleResponse(HttpHelper.Xml2DocumentConverter());
+		System.out.println(documentResult.toString());
+
+		// Read JSONObject object
+		JSONObject jsonObjectResult = Request.Get("http://ip:port").execute()
+				.handleResponse(HttpHelper.Json2ObjectConverter());
+		System.out.println(jsonObjectResult.toJSONString());
 	}
 }
