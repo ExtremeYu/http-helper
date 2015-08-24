@@ -10,6 +10,7 @@ import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.fluent.Request;
 import org.w3c.dom.Document;
 
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.robert.httphelper.HttpHelper;
 
@@ -91,5 +92,11 @@ public class Sample {
 		JSONObject jsonObjectResult = Request.Get("http://ip:port").execute()
 				.handleResponse(HttpHelper.Json2ObjectConverter());
 		System.out.println(jsonObjectResult.toJSONString());
+
+		// Read JSONObject object array
+		JSONArray jsonObjectArrayResult = Request.Get("http://ip:port")
+				.execute().handleResponse(HttpHelper.Json2ObjectsConverter());
+		System.out.println(jsonObjectArrayResult.toJSONString());
+
 	}
 }

@@ -8,6 +8,7 @@ import com.robert.httphelper.converter.IntConverter;
 import com.robert.httphelper.converter.Json2BeanConverter;
 import com.robert.httphelper.converter.Json2BeansConverter;
 import com.robert.httphelper.converter.Json2ObjectConverter;
+import com.robert.httphelper.converter.Json2ObjectsConverter;
 import com.robert.httphelper.converter.LongConverter;
 import com.robert.httphelper.converter.Xml2DocumentConverter;
 
@@ -34,6 +35,10 @@ public abstract class HttpHelper {
 
 	public static Json2ObjectConverter Json2ObjectConverter() {
 		return new Json2ObjectConverter();
+	}
+
+	public static Json2ObjectsConverter Json2ObjectsConverter() {
+		return new Json2ObjectsConverter();
 	}
 
 	public static Xml2DocumentConverter Xml2DocumentConverter() {

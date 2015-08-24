@@ -99,7 +99,12 @@ Http-Helper是对Apache Httpclient和Fluent API的有效补充，它使得使用
 		JSONObject jsonObjectResult = Request.Get("http://ip:port").execute()
 				.handleResponse(HttpHelper.Json2ObjectConverter());
 		System.out.println(jsonObjectResult.toJSONString());
-	
+		
+		
+		// Read JSONObject object array
+		JSONArray jsonObjectArrayResult = Request.Get("http://ip:port")
+				.execute().handleResponse(HttpHelper.Json2ObjectsConverter());
+		System.out.println(jsonObjectArrayResult.toJSONString());	
 ```
 
 ### 性能
