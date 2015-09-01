@@ -117,6 +117,7 @@ N/A
 2. 提供可配置的长链接和短链接的客户端,参考之前的公司的框架。
 3. Fluent API文档的翻译：http://hc.apache.org/httpcomponents-client-ga/tutorial/html/fluent.html
 4. 增加私有类型数组的API。
+5. 增加导入rest服务为api服务的方法，使用annotation来声明。 
 
 ## QQ群/微信公众号
 - <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=ff0d7d34f32c87dbd9aa56499a7478cd93e0e1d44288b9f6987a043818a1ad01"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="云时代网" title="云时代网"></a>
