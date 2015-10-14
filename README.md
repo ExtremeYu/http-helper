@@ -119,6 +119,7 @@ N/A
 4. 增加私有类型数组的API。
 5. 增加导入rest服务为api服务的方法，使用annotation来声明。 
 6. 实现声明式HTTP导入，在一个接口中声明HTTP方法，参数，URL等，就可以像使用本地服务一样直接使用HTTP服务。
+7. 对HTTP客户端出错请求进行重试，根据某些出错信息选择某些请求进行重试，重试次数需要在annotation中配置。
 
 ## QQ群/微信公众号
 - <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=ff0d7d34f32c87dbd9aa56499a7478cd93e0e1d44288b9f6987a043818a1ad01"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="云时代网" title="云时代网"></a>
