@@ -1,0 +1,1 @@
+Http-Helper是对Apache Httpclient和Fluent API的有效的补充，它使得使用Fluent API更加简单方便，它可以直接转换返回的响应体到指定的Java类型，使用者不需要手工的转换，Http-Helper帮助转换了大多数的数据类型，例如：Xml, Json, Json对象，Json数组，私有类型，以及私有类型数组等。
