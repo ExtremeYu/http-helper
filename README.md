@@ -122,10 +122,9 @@ N/A
 7. 对HTTP客户端出错请求进行重试，根据某些出错信息选择某些请求进行重试，重试次数需要在annotation中配置。
 8. 在annotation声明中，可以指定线程池，指定重用fluent api线程池还是使用一个单独的线程池
 
-## QQ群/微信公众号
-- <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=ff0d7d34f32c87dbd9aa56499a7478cd93e0e1d44288b9f6987a043818a1ad01"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="云时代网" title="云时代网"></a>
-<br>
-- <a href="http://cloudate.net/wp-content/uploads/2015/01/cloudate-qrcode.jpg"><img src="http://cloudate.net/wp-content/uploads/2015/01/cloudate-qrcode.jpg" alt="cloudate-qrcode" width="90" height="90" class="alignnone size-full wp-image-1138" /></a>
+## 获得技术支持
 
-## 关于作者
-- 罗伯特出品   微信： 13436881186
+联系作者：robert_lyp
+
+<a href="./resource/images/myqrcode.jpeg"><img src="./resource/images/myqrcode.jpeg" alt="cloudate-qrcode" width="150" height="190" class="alignnone size-full wp-image-1138" /></a>
+
